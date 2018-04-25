@@ -3,14 +3,14 @@ package com.company;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Female extends Human {
-    public Female(boolean gender, String name, String surname, float height, float weight) {
+class Female extends Human {
+    Female(boolean gender, String name, String surname, float height, float weight) {
         super(false, name, surname, height, weight);
     }
 
-    public Human GiveABirth(Male male) {
-        int i = new Random().nextInt(2);
-        if (i == 0) {
+    Human GiveABirth(Male male) {
+        boolean i = new Random().nextBoolean();
+        if (i) {
             System.out.println("Мальчик.\nВведите имя: ");
             String name = new Scanner(System.in).nextLine();
             String surname = male.getSurname();
